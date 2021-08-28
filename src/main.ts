@@ -11,6 +11,7 @@ import { DemoMaterialModule } from './app/material-module';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 import { ExampleComponent } from './app/example-component';
+import { StorageContainerTreeComponent } from './app/storage-container-tree/storage-container-tree.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import { ExampleComponent } from './app/example-component';
     ReactiveFormsModule
   ],
   entryComponents: [ExampleComponent],
-  declarations: [ExampleComponent],
+  declarations: [ExampleComponent, StorageContainerTreeComponent],
   bootstrap: [ExampleComponent],
   providers: [
     {
