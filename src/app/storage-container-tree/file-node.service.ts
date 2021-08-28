@@ -6,13 +6,7 @@ const FILE_NODES = [
   {
     filename: 'folder',
     type: '',
-    children: [
-      {
-        filename: 'test3',
-        type: 'exe',
-        children: []
-      }
-    ]
+    children: []
   },
   {
     filename: 'test2',
@@ -24,6 +18,7 @@ const FILE_NODES = [
 @Injectable()
 export class FileNodeService {
 
+  private idx: number = 0;
   private _storageContainers: BehaviorSubject<FileNode[]> = new BehaviorSubject<FileNode[]>([]);
   public readonly storageContainers: Observable<FileNode[]> = this._storageContainers.asObservable();
 
@@ -34,8 +29,20 @@ export class FileNodeService {
     this._storageContainers.next(FILE_NODES);
   }
 
-  getChildStorageContainers(node: any): Observable<FileNode[]> {
-    return of(node.children);
+  getChildStorageContainers(node: FileNode): Observable<FileNode[]> {
+    console.log(node);
+    return of([
+      {
+        filename: 'test3',
+        type: 'exe',
+        children: []
+      },
+      {
+        filename: 'test' + this.idx++,
+        type: '',
+        children: []
+      }
+    ]);
   }
 
 }
