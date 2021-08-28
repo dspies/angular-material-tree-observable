@@ -12,6 +12,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 import { ExampleComponent } from './app/example-component';
 import { StorageContainerTreeComponent } from './app/storage-container-tree/storage-container-tree.component';
+import { FileNodeService } from './app/storage-container-tree/file-node.service';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { StorageContainerTreeComponent } from './app/storage-container-tree/stor
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'fill' }
-    }
+    },
+    FileNodeService
   ]
 })
 export class AppModule {}
